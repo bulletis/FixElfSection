@@ -848,22 +848,25 @@ typedef struct elf64_sym {
   Elf64_Xword st_size;	/* Associated symbol size */
 } Elf64_Sym;
 #define EI_NIDENT	16
+
+/* ELF Header */
 typedef struct elf32_hdr{
-  unsigned char	e_ident[EI_NIDENT];
-  Elf32_Half	e_type;
-  Elf32_Half	e_machine;
-  Elf32_Word	e_version;
-  Elf32_Addr	e_entry;  /* Entry point */
-  Elf32_Off	e_phoff;
-  Elf32_Off	e_shoff;
-  Elf32_Word	e_flags;
-  Elf32_Half	e_ehsize;
-  Elf32_Half	e_phentsize;
-  Elf32_Half	e_phnum;
-  Elf32_Half	e_shentsize;
-  Elf32_Half	e_shnum;
-  Elf32_Half	e_shstrndx;
+  unsigned char	e_ident[EI_NIDENT]; /* ELF Identification */
+  Elf32_Half	e_type; 	/* object file type */
+  Elf32_Half	e_machine; 	/* machine */
+  Elf32_Word	e_version; 	/* object file version */
+  Elf32_Addr	e_entry;  	/* virtual entry point */
+  Elf32_Off	e_phoff; 		/* program header table offset */
+  Elf32_Off	e_shoff;		/* section header table offset */
+  Elf32_Word	e_flags;	/* processor-specific flags */
+  Elf32_Half	e_ehsize;	/* ELF header size */
+  Elf32_Half	e_phentsize;/* program header entry size */
+  Elf32_Half	e_phnum;	/* number of program header entries */
+  Elf32_Half	e_shentsize;/* section header entry size */
+  Elf32_Half	e_shnum;	/* number of section header entries */
+  Elf32_Half	e_shstrndx;	/* section header table's "section header string table" entry offset */
 } Elf32_Ehdr;
+
 typedef struct elf64_hdr {
   unsigned char	e_ident[16];	/* ELF "magic number" */
   Elf64_Half e_type;
